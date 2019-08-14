@@ -6,6 +6,7 @@ function displaygiff() {
 const giff = this.getAttribute("data-name");
 const queryURL = "https://api.giphy.com/v1/gifs/search?q=" + giff + "&apikey=0QG6PobGEmTJLBNwF8Gnu0lV6DqwBZ5y&limit=10";
 fetch(queryURL).then(function (response) {
+
 //return in JSON format//
 return response.json();
 }).then(function (responseJson) {
@@ -79,10 +80,10 @@ renderButtons();
 // Displaying giff data function//Ask Tutor for help//
 function renderButtons() {
 
-// Remove previous buttons
+// Remove previous buttons after refreshing//
 document.getElementById("buttons-view").innerHTML = "";
 
-// Loop through giffs
+// Loop through giphs
 for (let i = 0; i < giffs.length; i++) {
 
 // Generate buttons for each giff in the array
